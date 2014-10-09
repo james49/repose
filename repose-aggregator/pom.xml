@@ -479,6 +479,7 @@
                 </configuration>
             </plugin-->
 
+            <!-- this is only working without any output files, or with spamming output files to every single module :( -->
             <!--plugin>
                 <groupId>org.scalastyle</groupId>
                 <artifactId>scalastyle-maven-plugin</artifactId>
@@ -490,9 +491,9 @@
                     <failOnWarning>true</failOnWarning>
                     <sourceDirectory>${basedir}/</sourceDirectory>
                     <testSourceDirectory>${basedir}/</testSourceDirectory>
-                    <configLocation>repose-aggregator/scalastyle_config.xml</configLocation>
-                    <outputFile>/Users/eric7500/Developer/repose/repose-aggregator/scalastyle-output/scalastyle-output.xml</outputFile>
-                    <outputEncoding>UTF-8</outputEncoding>
+                    <configLocation>repose-aggregator/scalastyle_config.xml</configLocation-->
+                    <!--outputFile>/scalastyle-output.xml</outputFile-->
+                    <!--outputEncoding>UTF-8</outputEncoding>
                 </configuration>
                 <executions>
                     <execution>
@@ -504,8 +505,9 @@
             </plugin-->
 
 
+            <!-- this one isn't playing nice with doxygen :( -->
 
-            <!--plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.7</version>
@@ -520,17 +522,17 @@
                             <target>
                                 <taskdef name="codenarc" classname="org.codenarc.ant.CodeNarcTask" classpathref="maven.plugin.classpath"/>
                                 <codenarc
-                                        ruleSetFiles="file:${basedir}/ruleset.xml"
+                                        ruleSetFiles="file:/Users/eric7500/Developer/repose/repose-aggregator/ruleset.xml"
                                         maxPriority1Violations="0"
                                         maxPriority2Violations="0"
                                         maxPriority3Violations="0"
                                         >
                                     <report type="xml">
-                                        <option name="outputFile" value="${basedir}/CodeNarc.xml" />
+                                        <option name="outputFile" value="/Users/eric7500/Developer/repose/repose-aggregator/CodeNarc.xml" />
                                         <option name="title" value="${project.name}" />
                                     </report>
-                                    <fileset dir="src/test/groovy">
-                                        <include name="**/GroovClass.groovy"/>
+                                    <fileset dir="${basedir}">
+                                        <include name="**/*.groovy"/>
                                     </fileset>
                                 </codenarc>
                             </target>
@@ -550,12 +552,39 @@
                         </exclusions>
                     </dependency>
                 </dependencies>
+            </plugin>
+
+
+            <!--plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>codenarc-maven-plugin</artifactId>
+                <version>0.18-1</version>
+                <configuration>
+                    <sourceDirectory>${basedir}/</sourceDirectory>
+                    <maxPriority1Violations>0</maxPriority1Violations>
+                    <maxPriority2Violations>0</maxPriority2Violations>
+                    <maxPriority3Violations>0</maxPriority3Violations>
+                    <rulesetfiles>/Users/eric7500/Developer/repose/repose-aggregator/ruleset.xml</rulesetfiles>
+                    <xmlOutputDirectory>"file:/Users/eric7500/Developer/repose/repose-aggregator/CodeNarc.xml"</xmlOutputDirectory>
+                    <log4jConfigFile>"file:/Users/eric7500/Developer/repose/repose-aggregator/log4j.properties"</log4jConfigFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>execution1</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>codenarc</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin-->
-
-
-
 
 
         </plugins>
     </build>
+
+
+
+
+
 </project>
