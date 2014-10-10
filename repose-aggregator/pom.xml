@@ -480,6 +480,9 @@
             </plugin-->
 
             <!-- this is only working without any output files, or with spamming output files to every single module :( -->
+
+            <!-- try using relative path to make it only build in root directory-->
+
             <!--plugin>
                 <groupId>org.scalastyle</groupId>
                 <artifactId>scalastyle-maven-plugin</artifactId>
@@ -506,6 +509,8 @@
 
 
             <!-- this one isn't playing nice with doxygen :( -->
+
+            <!-- try using different ant version or different codenarc version -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
