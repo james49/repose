@@ -527,13 +527,13 @@
                             <target>
                                 <taskdef name="codenarc" classname="org.codenarc.ant.CodeNarcTask" classpathref="maven.plugin.classpath"/>
                                 <codenarc
-                                        ruleSetFiles="file:/Users/eric7500/Developer/repose/repose-aggregator/ruleset.xml"
+                                        ruleSetFiles="file:repose-aggregator/ruleset.xml"
                                         maxPriority1Violations="0"
                                         maxPriority2Violations="0"
                                         maxPriority3Violations="0"
                                         >
                                     <report type="xml">
-                                        <option name="outputFile" value="/Users/eric7500/Developer/repose/repose-aggregator/CodeNarc.xml" />
+                                        <option name="outputFile" value="repose-aggregator/CodeNarc.xml" />
                                         <option name="title" value="${project.name}" />
                                     </report>
                                     <fileset dir="${basedir}">
@@ -558,32 +558,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
-
-            <!--plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>codenarc-maven-plugin</artifactId>
-                <version>0.18-1</version>
-                <configuration>
-                    <sourceDirectory>${basedir}/</sourceDirectory>
-                    <maxPriority1Violations>0</maxPriority1Violations>
-                    <maxPriority2Violations>0</maxPriority2Violations>
-                    <maxPriority3Violations>0</maxPriority3Violations>
-                    <rulesetfiles>/Users/eric7500/Developer/repose/repose-aggregator/ruleset.xml</rulesetfiles>
-                    <xmlOutputDirectory>"file:/Users/eric7500/Developer/repose/repose-aggregator/CodeNarc.xml"</xmlOutputDirectory>
-                    <log4jConfigFile>"file:/Users/eric7500/Developer/repose/repose-aggregator/log4j.properties"</log4jConfigFile>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>execution1</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>codenarc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin-->
-
 
         </plugins>
     </build>
