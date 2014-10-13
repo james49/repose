@@ -495,7 +495,7 @@
                     <sourceDirectory>${basedir}/</sourceDirectory>
                     <testSourceDirectory>${basedir}/</testSourceDirectory>
                     <configLocation>repose-aggregator/scalastyle_config.xml</configLocation>
-                    <!--outputFile></outputFile-->
+                    <outputFile>/Users/eric7500/Developer/repose/repose-aggregator/scalastyle_output.xml</outputFile>
                     <outputEncoding>UTF-8</outputEncoding>
                 </configuration>
                 <executions>
@@ -509,7 +509,6 @@
 
 
             <!-- this is working now that doxygen is commented out-->
-            
             <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
