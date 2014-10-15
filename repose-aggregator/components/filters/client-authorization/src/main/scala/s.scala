@@ -17,7 +17,8 @@ class A {
     val zz = if (true) 1 else 3
     val uz = if (true)
       1
-    else {
+    else
+    {
     }
     if (true) {
       false

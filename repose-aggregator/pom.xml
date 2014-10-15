@@ -495,11 +495,12 @@
                     <sourceDirectory>${basedir}/</sourceDirectory>
                     <testSourceDirectory>${basedir}/</testSourceDirectory>
                     <configLocation>repose-aggregator/scalastyle_config.xml</configLocation>
-                    <outputFile>/Users/eric7500/Developer/repose/repose-aggregator/scalastyle_output.xml</outputFile>
+                    <outputFile>/scalastyle_output.xml</outputFile>
                     <outputEncoding>UTF-8</outputEncoding>
                 </configuration>
                 <executions>
                     <execution>
+                        <phase>generate-resources</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
