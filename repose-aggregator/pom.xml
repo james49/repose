@@ -494,13 +494,12 @@
                     <failOnWarning>true</failOnWarning>
                     <sourceDirectory>${basedir}/</sourceDirectory>
                     <testSourceDirectory>${basedir}/</testSourceDirectory>
-                    <configLocation>repose-aggregator/scalastyle_config.xml</configLocation>
-                    <outputFile>/scalastyle_output.xml</outputFile>
+                    <configLocation>scalastyle_config.xml</configLocation>
                     <outputEncoding>UTF-8</outputEncoding>
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>generate-resources</phase>
+                        <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
