@@ -530,7 +530,7 @@
                                         maxPriority3Violations="0"
                                         >
                                     <report type="xml">
-                                        <option name="outputFile" value="repose-aggregator/CodeNarc.xml" />
+                                        <option name="outputFile" value="CodeNarc.xml" />
                                         <option name="title" value="${project.name}" />
                                     </report>
                                     <fileset dir="${basedir}">
