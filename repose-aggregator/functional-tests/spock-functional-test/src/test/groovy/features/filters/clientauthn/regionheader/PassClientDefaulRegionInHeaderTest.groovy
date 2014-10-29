@@ -78,7 +78,7 @@ class PassClientDefaulRegionInHeaderTest extends ReposeValveTest {
         fakeIdentityService.resetCounts()
         MessageChain mc = deproxy.makeRequest(url: reposeEndpoint, method: 'GET', headers: ['X-Auth-Token': fakeIdentityService.client_token])
 
-        then: "Repose should validate the token and path the user's default region as the X-Default_Region header to the origin service"
+        then: "Repose should validate the token and pass the user's default region as the X-Default-Region header to the origin service"
         mc.receivedResponse.code == "200"
         fakeIdentityService.validateTokenCount == 1
         mc.handlings.size() == 1
